@@ -33,30 +33,37 @@ namespace REMA
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageViga = new System.Windows.Forms.TabPage();
-            this.tabPageSecTrans = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxW = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxV = new System.Windows.Forms.TextBox();
             this.labelU = new System.Windows.Forms.Label();
-            this.textBoxU = new System.Windows.Forms.TextBox();
             this.labelP = new System.Windows.Forms.Label();
-            this.textBoxP = new System.Windows.Forms.TextBox();
             this.labelF = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxF = new System.Windows.Forms.TextBox();
-            this.tabPageConstantes = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.labelTransx = new System.Windows.Forms.Label();
-            this.textBoxTransx = new System.Windows.Forms.TextBox();
-            this.textBoxTransy = new System.Windows.Forms.TextBox();
+            this.tabPageSecTrans = new System.Windows.Forms.TabPage();
             this.labelTransy = new System.Windows.Forms.Label();
+            this.labelTransx = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tabPageConstantes = new System.Windows.Forms.TabPage();
             this.buttonValoresPadrao = new System.Windows.Forms.Button();
+            this.numericUpDownF = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownP = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownV = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownU = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownW = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTransX = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTransY = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPageViga.SuspendLayout();
-            this.tabPageSecTrans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPageSecTrans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransY)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCalcular
@@ -99,17 +106,17 @@ namespace REMA
             // 
             // tabPageViga
             // 
+            this.tabPageViga.Controls.Add(this.numericUpDownW);
+            this.tabPageViga.Controls.Add(this.numericUpDownU);
+            this.tabPageViga.Controls.Add(this.numericUpDownV);
+            this.tabPageViga.Controls.Add(this.numericUpDownP);
+            this.tabPageViga.Controls.Add(this.numericUpDownF);
             this.tabPageViga.Controls.Add(this.label2);
-            this.tabPageViga.Controls.Add(this.textBoxW);
             this.tabPageViga.Controls.Add(this.label1);
-            this.tabPageViga.Controls.Add(this.textBoxV);
             this.tabPageViga.Controls.Add(this.labelU);
-            this.tabPageViga.Controls.Add(this.textBoxU);
             this.tabPageViga.Controls.Add(this.labelP);
-            this.tabPageViga.Controls.Add(this.textBoxP);
             this.tabPageViga.Controls.Add(this.labelF);
             this.tabPageViga.Controls.Add(this.pictureBox1);
-            this.tabPageViga.Controls.Add(this.textBoxF);
             this.tabPageViga.Location = new System.Drawing.Point(4, 22);
             this.tabPageViga.Name = "tabPageViga";
             this.tabPageViga.Padding = new System.Windows.Forms.Padding(3);
@@ -117,21 +124,6 @@ namespace REMA
             this.tabPageViga.TabIndex = 0;
             this.tabPageViga.Text = "Viga";
             this.tabPageViga.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSecTrans
-            // 
-            this.tabPageSecTrans.Controls.Add(this.textBoxTransy);
-            this.tabPageSecTrans.Controls.Add(this.labelTransy);
-            this.tabPageSecTrans.Controls.Add(this.textBoxTransx);
-            this.tabPageSecTrans.Controls.Add(this.labelTransx);
-            this.tabPageSecTrans.Controls.Add(this.pictureBox2);
-            this.tabPageSecTrans.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSecTrans.Name = "tabPageSecTrans";
-            this.tabPageSecTrans.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSecTrans.Size = new System.Drawing.Size(703, 258);
-            this.tabPageSecTrans.TabIndex = 1;
-            this.tabPageSecTrans.Text = "Seção Transversal";
-            this.tabPageSecTrans.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -142,13 +134,6 @@ namespace REMA
             this.label2.TabIndex = 26;
             this.label2.Text = "w:";
             // 
-            // textBoxW
-            // 
-            this.textBoxW.Location = new System.Drawing.Point(28, 110);
-            this.textBoxW.Name = "textBoxW";
-            this.textBoxW.Size = new System.Drawing.Size(118, 20);
-            this.textBoxW.TabIndex = 25;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -157,13 +142,6 @@ namespace REMA
             this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "v:";
-            // 
-            // textBoxV
-            // 
-            this.textBoxV.Location = new System.Drawing.Point(28, 84);
-            this.textBoxV.Name = "textBoxV";
-            this.textBoxV.Size = new System.Drawing.Size(118, 20);
-            this.textBoxV.TabIndex = 23;
             // 
             // labelU
             // 
@@ -174,13 +152,6 @@ namespace REMA
             this.labelU.TabIndex = 22;
             this.labelU.Text = "u:";
             // 
-            // textBoxU
-            // 
-            this.textBoxU.Location = new System.Drawing.Point(28, 58);
-            this.textBoxU.Name = "textBoxU";
-            this.textBoxU.Size = new System.Drawing.Size(118, 20);
-            this.textBoxU.TabIndex = 21;
-            // 
             // labelP
             // 
             this.labelP.AutoSize = true;
@@ -189,13 +160,6 @@ namespace REMA
             this.labelP.Size = new System.Drawing.Size(17, 13);
             this.labelP.TabIndex = 20;
             this.labelP.Text = "P:";
-            // 
-            // textBoxP
-            // 
-            this.textBoxP.Location = new System.Drawing.Point(28, 32);
-            this.textBoxP.Name = "textBoxP";
-            this.textBoxP.Size = new System.Drawing.Size(118, 20);
-            this.textBoxP.TabIndex = 19;
             // 
             // labelF
             // 
@@ -219,22 +183,38 @@ namespace REMA
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // textBoxF
+            // tabPageSecTrans
             // 
-            this.textBoxF.Location = new System.Drawing.Point(28, 6);
-            this.textBoxF.Name = "textBoxF";
-            this.textBoxF.Size = new System.Drawing.Size(118, 20);
-            this.textBoxF.TabIndex = 16;
+            this.tabPageSecTrans.Controls.Add(this.numericUpDownTransY);
+            this.tabPageSecTrans.Controls.Add(this.numericUpDownTransX);
+            this.tabPageSecTrans.Controls.Add(this.labelTransy);
+            this.tabPageSecTrans.Controls.Add(this.labelTransx);
+            this.tabPageSecTrans.Controls.Add(this.pictureBox2);
+            this.tabPageSecTrans.Location = new System.Drawing.Point(4, 22);
+            this.tabPageSecTrans.Name = "tabPageSecTrans";
+            this.tabPageSecTrans.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSecTrans.Size = new System.Drawing.Size(703, 258);
+            this.tabPageSecTrans.TabIndex = 1;
+            this.tabPageSecTrans.Text = "Seção Transversal";
+            this.tabPageSecTrans.UseVisualStyleBackColor = true;
             // 
-            // tabPageConstantes
+            // labelTransy
             // 
-            this.tabPageConstantes.Location = new System.Drawing.Point(4, 22);
-            this.tabPageConstantes.Name = "tabPageConstantes";
-            this.tabPageConstantes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConstantes.Size = new System.Drawing.Size(703, 258);
-            this.tabPageConstantes.TabIndex = 2;
-            this.tabPageConstantes.Text = "Constantes";
-            this.tabPageConstantes.UseVisualStyleBackColor = true;
+            this.labelTransy.AutoSize = true;
+            this.labelTransy.Location = new System.Drawing.Point(172, 72);
+            this.labelTransy.Name = "labelTransy";
+            this.labelTransy.Size = new System.Drawing.Size(15, 13);
+            this.labelTransy.TabIndex = 21;
+            this.labelTransy.Text = "y:";
+            // 
+            // labelTransx
+            // 
+            this.labelTransx.AutoSize = true;
+            this.labelTransx.Location = new System.Drawing.Point(172, 46);
+            this.labelTransx.Name = "labelTransx";
+            this.labelTransx.Size = new System.Drawing.Size(15, 13);
+            this.labelTransx.TabIndex = 19;
+            this.labelTransx.Text = "x:";
             // 
             // pictureBox2
             // 
@@ -249,37 +229,15 @@ namespace REMA
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
-            // labelTransx
+            // tabPageConstantes
             // 
-            this.labelTransx.AutoSize = true;
-            this.labelTransx.Location = new System.Drawing.Point(169, 105);
-            this.labelTransx.Name = "labelTransx";
-            this.labelTransx.Size = new System.Drawing.Size(15, 13);
-            this.labelTransx.TabIndex = 19;
-            this.labelTransx.Text = "x:";
-            // 
-            // textBoxTransx
-            // 
-            this.textBoxTransx.Location = new System.Drawing.Point(190, 102);
-            this.textBoxTransx.Name = "textBoxTransx";
-            this.textBoxTransx.Size = new System.Drawing.Size(102, 20);
-            this.textBoxTransx.TabIndex = 20;
-            // 
-            // textBoxTransy
-            // 
-            this.textBoxTransy.Location = new System.Drawing.Point(190, 128);
-            this.textBoxTransy.Name = "textBoxTransy";
-            this.textBoxTransy.Size = new System.Drawing.Size(102, 20);
-            this.textBoxTransy.TabIndex = 22;
-            // 
-            // labelTransy
-            // 
-            this.labelTransy.AutoSize = true;
-            this.labelTransy.Location = new System.Drawing.Point(169, 131);
-            this.labelTransy.Name = "labelTransy";
-            this.labelTransy.Size = new System.Drawing.Size(15, 13);
-            this.labelTransy.TabIndex = 21;
-            this.labelTransy.Text = "y:";
+            this.tabPageConstantes.Location = new System.Drawing.Point(4, 22);
+            this.tabPageConstantes.Name = "tabPageConstantes";
+            this.tabPageConstantes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConstantes.Size = new System.Drawing.Size(703, 258);
+            this.tabPageConstantes.TabIndex = 2;
+            this.tabPageConstantes.Text = "Constantes";
+            this.tabPageConstantes.UseVisualStyleBackColor = true;
             // 
             // buttonValoresPadrao
             // 
@@ -291,6 +249,56 @@ namespace REMA
             this.buttonValoresPadrao.TabIndex = 17;
             this.buttonValoresPadrao.Text = "Valores Padrão";
             this.buttonValoresPadrao.UseVisualStyleBackColor = true;
+            this.buttonValoresPadrao.Click += new System.EventHandler(this.buttonValoresPadrao_Click);
+            // 
+            // numericUpDownF
+            // 
+            this.numericUpDownF.Location = new System.Drawing.Point(28, 6);
+            this.numericUpDownF.Name = "numericUpDownF";
+            this.numericUpDownF.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownF.TabIndex = 27;
+            // 
+            // numericUpDownP
+            // 
+            this.numericUpDownP.Location = new System.Drawing.Point(28, 32);
+            this.numericUpDownP.Name = "numericUpDownP";
+            this.numericUpDownP.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownP.TabIndex = 28;
+            // 
+            // numericUpDownV
+            // 
+            this.numericUpDownV.Location = new System.Drawing.Point(29, 85);
+            this.numericUpDownV.Name = "numericUpDownV";
+            this.numericUpDownV.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownV.TabIndex = 29;
+            // 
+            // numericUpDownU
+            // 
+            this.numericUpDownU.Location = new System.Drawing.Point(28, 58);
+            this.numericUpDownU.Name = "numericUpDownU";
+            this.numericUpDownU.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownU.TabIndex = 30;
+            // 
+            // numericUpDownW
+            // 
+            this.numericUpDownW.Location = new System.Drawing.Point(28, 113);
+            this.numericUpDownW.Name = "numericUpDownW";
+            this.numericUpDownW.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownW.TabIndex = 31;
+            // 
+            // numericUpDownTransX
+            // 
+            this.numericUpDownTransX.Location = new System.Drawing.Point(193, 44);
+            this.numericUpDownTransX.Name = "numericUpDownTransX";
+            this.numericUpDownTransX.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownTransX.TabIndex = 23;
+            // 
+            // numericUpDownTransY
+            // 
+            this.numericUpDownTransY.Location = new System.Drawing.Point(193, 70);
+            this.numericUpDownTransY.Name = "numericUpDownTransY";
+            this.numericUpDownTransY.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownTransY.TabIndex = 24;
             // 
             // Main
             // 
@@ -308,10 +316,17 @@ namespace REMA
             this.tabControl1.ResumeLayout(false);
             this.tabPageViga.ResumeLayout(false);
             this.tabPageViga.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPageSecTrans.ResumeLayout(false);
             this.tabPageSecTrans.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransY)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,24 +337,24 @@ namespace REMA
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageViga;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxW;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxV;
         private System.Windows.Forms.Label labelU;
-        private System.Windows.Forms.TextBox textBoxU;
         private System.Windows.Forms.Label labelP;
-        private System.Windows.Forms.TextBox textBoxP;
         private System.Windows.Forms.Label labelF;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBoxF;
         private System.Windows.Forms.TabPage tabPageSecTrans;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tabPageConstantes;
-        private System.Windows.Forms.TextBox textBoxTransy;
         private System.Windows.Forms.Label labelTransy;
-        private System.Windows.Forms.TextBox textBoxTransx;
         private System.Windows.Forms.Label labelTransx;
         private System.Windows.Forms.Button buttonValoresPadrao;
+        private System.Windows.Forms.NumericUpDown numericUpDownW;
+        private System.Windows.Forms.NumericUpDown numericUpDownU;
+        private System.Windows.Forms.NumericUpDown numericUpDownV;
+        private System.Windows.Forms.NumericUpDown numericUpDownP;
+        private System.Windows.Forms.NumericUpDown numericUpDownF;
+        private System.Windows.Forms.NumericUpDown numericUpDownTransY;
+        private System.Windows.Forms.NumericUpDown numericUpDownTransX;
     }
 }
 
