@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace REMA
 {
     public partial class Main : Form
-    {
+    {   
 
         public Main()
         {
@@ -60,7 +60,7 @@ namespace REMA
             foreach(var campo in campos)
             {
                 campo.Value = decimal.Zero;
-                campo.Maximum = 10000.0M;
+                campo.Maximum = 10000000.0M;
                 campo.Minimum = decimal.Zero;
                 campo.DecimalPlaces = 2;
                 campo.KeyPress += campo_KeyPress;
