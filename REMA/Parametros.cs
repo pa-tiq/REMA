@@ -10,7 +10,16 @@ namespace REMA
     {
         public Parametros()
         {
-
+            this.F = decimal.Zero;
+            this.P = decimal.Zero;
+            this.u = decimal.Zero;
+            this.v = decimal.Zero;
+            this.w = decimal.Zero;
+            this.x = decimal.Zero;
+            this.y = decimal.Zero;
+            this.S1 =decimal.Zero;
+            this.S2 =decimal.Zero;
+            this.S3 = decimal.Zero;
         }
 
         public decimal u

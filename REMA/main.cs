@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace REMA
 {
     public partial class Main : Form
-    {   
+    {
+        Parametros prm = new Parametros();
 
         public Main()
         {
@@ -27,15 +28,34 @@ namespace REMA
         }
 
         private void PreencherValoresPadrao()
-        {
-            numericUpDownF.Value = new decimal(200.0);
-            numericUpDownP.Value = new decimal(2.0);
-            numericUpDownU.Value = new decimal(150.0);
-            numericUpDownV.Value = new decimal(50.0);
-            numericUpDownW.Value = new decimal(50.0);
-            numericUpDownTransX.Value = new decimal(24.0);
-            numericUpDownTransY.Value = new decimal(76.0);
+        {            
+            prm.F = new decimal(200.0);
+            prm.P = new decimal(2.0);
+            prm.u = new decimal(150.0);
+            prm.v = new decimal(50.0);
+            prm.w = new decimal(50.0);
+            prm.x = new decimal(24.0);
+            prm.y = new decimal(76.0);
+            prm.S1 = prm.u / 2;
+            prm.S2 = (prm.u + (prm.u + prm.v)) / 2;
+            prm.S3 = ((prm.u + prm.v) + (prm.u + prm.v + prm.w)) / 2;
+
+            PreencherTela(prm);
             AtualizarCampos();
+        }
+
+        private void PreencherTela(Parametros prm)
+        {
+            numericUpDownF.Value = prm.F;
+            numericUpDownP.Value = prm.P;
+            numericUpDownU.Value = prm.u;
+            numericUpDownV.Value = prm.v;
+            numericUpDownW.Value = prm.w;
+            numericUpDownX.Value = prm.x;
+            numericUpDownY.Value = prm.y;
+            numericUpDownS1.Value = prm.S1;
+            numericUpDownS1.Value = prm.S2;
+            numericUpDownS1.Value = prm.S3;
         }
 
         private List<NumericUpDown> Campos()
@@ -47,8 +67,8 @@ namespace REMA
             campos.Add(numericUpDownU);
             campos.Add(numericUpDownV);
             campos.Add(numericUpDownW);
-            campos.Add(numericUpDownTransX);
-            campos.Add(numericUpDownTransY);
+            campos.Add(numericUpDownX);
+            campos.Add(numericUpDownY);
 
             return campos;
         }

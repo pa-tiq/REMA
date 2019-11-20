@@ -48,16 +48,16 @@ namespace REMA
             this.tabPageSecTrans = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownTransY = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownTransX = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownY = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownX = new System.Windows.Forms.NumericUpDown();
             this.labelTransy = new System.Windows.Forms.Label();
             this.labelTransx = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageConstantes = new System.Windows.Forms.TabPage();
             this.buttonValoresPadrao = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownS1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownS3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownS2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,12 +72,12 @@ namespace REMA
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageSecTrans.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownS3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownS2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCalcular
@@ -135,9 +135,9 @@ namespace REMA
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.numericUpDownS2);
+            this.groupBox1.Controls.Add(this.numericUpDownS3);
+            this.groupBox1.Controls.Add(this.numericUpDownS1);
             this.groupBox1.Controls.Add(this.numericUpDownW);
             this.groupBox1.Controls.Add(this.numericUpDownU);
             this.groupBox1.Controls.Add(this.numericUpDownV);
@@ -270,8 +270,8 @@ namespace REMA
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.numericUpDownTransY);
-            this.groupBox2.Controls.Add(this.numericUpDownTransX);
+            this.groupBox2.Controls.Add(this.numericUpDownY);
+            this.groupBox2.Controls.Add(this.numericUpDownX);
             this.groupBox2.Controls.Add(this.labelTransy);
             this.groupBox2.Controls.Add(this.labelTransx);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
@@ -280,19 +280,19 @@ namespace REMA
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             // 
-            // numericUpDownTransY
+            // numericUpDownY
             // 
-            this.numericUpDownTransY.Location = new System.Drawing.Point(29, 45);
-            this.numericUpDownTransY.Name = "numericUpDownTransY";
-            this.numericUpDownTransY.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTransY.TabIndex = 28;
+            this.numericUpDownY.Location = new System.Drawing.Point(29, 45);
+            this.numericUpDownY.Name = "numericUpDownY";
+            this.numericUpDownY.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownY.TabIndex = 28;
             // 
-            // numericUpDownTransX
+            // numericUpDownX
             // 
-            this.numericUpDownTransX.Location = new System.Drawing.Point(29, 19);
-            this.numericUpDownTransX.Name = "numericUpDownTransX";
-            this.numericUpDownTransX.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownTransX.TabIndex = 27;
+            this.numericUpDownX.Location = new System.Drawing.Point(29, 19);
+            this.numericUpDownX.Name = "numericUpDownX";
+            this.numericUpDownX.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownX.TabIndex = 27;
             // 
             // labelTransy
             // 
@@ -347,26 +347,26 @@ namespace REMA
             this.buttonValoresPadrao.UseVisualStyleBackColor = true;
             this.buttonValoresPadrao.Click += new System.EventHandler(this.buttonValoresPadrao_Click);
             // 
-            // numericUpDown1
+            // numericUpDownS1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(31, 152);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 42;
+            this.numericUpDownS1.Location = new System.Drawing.Point(31, 152);
+            this.numericUpDownS1.Name = "numericUpDownS1";
+            this.numericUpDownS1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownS1.TabIndex = 42;
             // 
-            // numericUpDown2
+            // numericUpDownS3
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(32, 204);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 43;
+            this.numericUpDownS3.Location = new System.Drawing.Point(32, 204);
+            this.numericUpDownS3.Name = "numericUpDownS3";
+            this.numericUpDownS3.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownS3.TabIndex = 43;
             // 
-            // numericUpDown3
+            // numericUpDownS2
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(32, 178);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 44;
+            this.numericUpDownS2.Location = new System.Drawing.Point(32, 178);
+            this.numericUpDownS2.Name = "numericUpDownS2";
+            this.numericUpDownS2.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownS2.TabIndex = 44;
             // 
             // label3
             // 
@@ -421,12 +421,12 @@ namespace REMA
             this.tabPageSecTrans.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTransX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownS3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownS2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,17 +453,17 @@ namespace REMA
         private System.Windows.Forms.Label labelP;
         private System.Windows.Forms.Label labelF;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDownTransY;
-        private System.Windows.Forms.NumericUpDown numericUpDownTransX;
+        private System.Windows.Forms.NumericUpDown numericUpDownY;
+        private System.Windows.Forms.NumericUpDown numericUpDownX;
         private System.Windows.Forms.Label labelTransy;
         private System.Windows.Forms.Label labelTransx;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownS2;
+        private System.Windows.Forms.NumericUpDown numericUpDownS3;
+        private System.Windows.Forms.NumericUpDown numericUpDownS1;
     }
 }
 

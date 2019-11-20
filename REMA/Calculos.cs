@@ -18,6 +18,10 @@ namespace REMA
             this.Dy = Gama(prm) + prm.F - Ay;
             this.V1 = retornarV1(prm);
             this.M1 = retornarM1(prm);
+            this.V2 = retornarV2(prm);
+            this.M2 = retornarM2(prm);
+            this.V3 = retornarV3(prm);
+            this.M3 = retornarM3(prm);
         }
 
         private decimal Beta()
@@ -109,10 +113,22 @@ namespace REMA
             set { V2 = value; }
         }
 
+        public decimal M2
+        {
+            get { return M2; }
+            set { M2 = value; }
+        }
+
         public decimal V3
         {
             get { return V3; }
             set { V3 = value; }
+        }
+
+        public decimal M3
+        {
+            get { return M3; }
+            set { M3 = value; }
         }
 
     }
