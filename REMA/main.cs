@@ -61,6 +61,8 @@ namespace REMA
             {
                 campo.Value = decimal.Zero;
                 campo.Maximum = 10000.0M;
+                campo.Minimum = decimal.Zero;
+                campo.DecimalPlaces = 2;
                 campo.KeyPress += campo_KeyPress;
             }
         }
