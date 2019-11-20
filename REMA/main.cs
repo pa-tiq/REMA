@@ -27,6 +27,24 @@ namespace REMA
             campos.ForEach(x => x.Update());
         }
 
+        private List<NumericUpDown> Campos()
+        {
+            var campos = new List<NumericUpDown>();
+
+            campos.Add(numericUpDownF);
+            campos.Add(numericUpDownP);
+            campos.Add(numericUpDownU);
+            campos.Add(numericUpDownV);
+            campos.Add(numericUpDownW);
+            campos.Add(numericUpDownX);
+            campos.Add(numericUpDownY);
+            campos.Add(numericUpDownS1);
+            campos.Add(numericUpDownS2);
+            campos.Add(numericUpDownS3);
+
+            return campos;
+        }
+
         private void PreencherValoresPadrao()
         {            
             prm.F = new decimal(200.0);
@@ -54,23 +72,8 @@ namespace REMA
             numericUpDownX.Value = prm.x;
             numericUpDownY.Value = prm.y;
             numericUpDownS1.Value = prm.S1;
-            numericUpDownS1.Value = prm.S2;
-            numericUpDownS1.Value = prm.S3;
-        }
-
-        private List<NumericUpDown> Campos()
-        {
-            var campos = new List<NumericUpDown>();
-
-            campos.Add(numericUpDownF);
-            campos.Add(numericUpDownP);
-            campos.Add(numericUpDownU);
-            campos.Add(numericUpDownV);
-            campos.Add(numericUpDownW);
-            campos.Add(numericUpDownX);
-            campos.Add(numericUpDownY);
-
-            return campos;
+            numericUpDownS2.Value = prm.S2;
+            numericUpDownS3.Value = prm.S3;
         }
 
         private void ConfigurarCampos()
@@ -122,7 +125,15 @@ namespace REMA
                 decimal.TryParse(x.Value.ToString(), out valor);
                 if(valor <= decimal.Zero)
                 {
-                    x.Focus();
+                    if (!x.Focus())
+                    {
+                        for (var i = 0; i < tabControl1.TabPages.Count; i++)
+                        {
+                            tabControl1.SelectTab(i);
+                            if (x.Focus()) break;
+                        }
+                    }
+
                     return false;
                 }
             }

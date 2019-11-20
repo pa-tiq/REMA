@@ -64,72 +64,27 @@ namespace REMA
             return (Ay - Gama(prm) - prm.F) * prm.S3 + (Gama(prm) * Beta() * Ltotal) + (prm.F * LP);
         }
 
+        public decimal Ltotal { get; set; }
 
-        public decimal Ltotal
-        {
-            get { return Ltotal; }
-            set { Ltotal = value; }
-        }
+        public decimal LF { get; set; }
 
-        public decimal LF
-        {
-            get { return LF; }
-            set { LF = value; }
-        }
+        public decimal LP { get; set; }
 
-        public decimal LP
-        {
-            get { return LP; }
-            set { LP = value; }
-        }
+        public decimal Ay { get; set; }
 
-        public decimal Ay
-        {
-            get { return Ay; }
-            set { Ay = value; }
-        }
+        public decimal Dy { get; set; }
 
-        public decimal Dy
-        {
-            get { return Dy; }
-            set { Dy = value; }
-        }
+        public decimal V1 { get; set; }
 
-        public decimal V1
-        {
-            get { return V1; }
-            set { V1 = value; }
-        }
+        public decimal M1 { get; set; }
 
-        public decimal M1
-        {
-            get { return M1; }
-            set { M1 = value; }
-        }
+        public decimal V2 { get; set; }
 
-        public decimal V2
-        {
-            get { return V2; }
-            set { V2 = value; }
-        }
+        public decimal M2 { get; set; }
 
-        public decimal M2
-        {
-            get { return M2; }
-            set { M2 = value; }
-        }
+        public decimal V3 { get; set; }
 
-        public decimal V3
-        {
-            get { return V3; }
-            set { V3 = value; }
-        }
-
-        public decimal M3
-        {
-            get { return M3; }
-            set { M3 = value; }
-        }
+        public decimal M3 { get; set; }
 
     }
 }
