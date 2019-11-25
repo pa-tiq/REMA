@@ -8,13 +8,30 @@ namespace REMA
 {
     public class Calculos
     {
-        public Calculos(Parametros prm)
+
+        public Calculos()
+        {
+            this.LF = decimal.Zero;
+            this.LP = decimal.Zero;
+            this.LT = decimal.Zero;
+            //P é a força distribuída e F é a força concentrada
+            this.Ay = decimal.Zero;
+            this.Dy = decimal.Zero;
+            this.V1 = decimal.Zero;
+            this.M1 = decimal.Zero;
+            this.V2 = decimal.Zero;
+            this.M2 = decimal.Zero;
+            this.V3 = decimal.Zero;
+            this.M3 = decimal.Zero;
+        }
+
+        public void Calcular(Parametros prm)
         {
             this.LF = prm.u + prm.v;
             this.LP = prm.u;
-            this.Ltotal = prm.u + prm.v + prm.w;
+            this.LT = prm.u + prm.v + prm.w;
             //P é a força distribuída e F é a força concentrada
-            this.Ay = (prm.F * (1 - (LF / Ltotal)) + Gama(prm) * (1 + Beta()));
+            this.Ay = (prm.F * (1 - (LF / LT)) + Gama(prm) * (1 + Beta()));
             this.Dy = Gama(prm) + prm.F - Ay;
             this.V1 = retornarV1(prm);
             this.M1 = retornarM1(prm);
@@ -26,7 +43,7 @@ namespace REMA
 
         private decimal Beta()
         {
-            return ((2 * LP) / (3 * Ltotal));
+            return ((2 * LP) / (3 * LT));
         }
 
         private decimal Gama(Parametros prm)
@@ -51,7 +68,7 @@ namespace REMA
 
         private decimal retornarM2(Parametros prm)
         {
-            return Ay * prm.S2 - Gama(prm)*prm.S2 + Gama(prm)*Beta()*Ltotal;
+            return Ay * prm.S2 - Gama(prm)*prm.S2 + Gama(prm)*Beta()*LT;
         }
 
         private decimal retornarV3(Parametros prm)
@@ -61,10 +78,10 @@ namespace REMA
 
         private decimal retornarM3(Parametros prm)
         {
-            return (Ay - Gama(prm) - prm.F) * prm.S3 + (Gama(prm) * Beta() * Ltotal) + (prm.F * LP);
+            return (Ay - Gama(prm) - prm.F) * prm.S3 + (Gama(prm) * Beta() * LT) + (prm.F * LP);
         }
 
-        public decimal Ltotal { get; set; }
+        public decimal LT { get; set; }
 
         public decimal LF { get; set; }
 

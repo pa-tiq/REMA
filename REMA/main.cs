@@ -13,6 +13,7 @@ namespace REMA
     public partial class Main : Form
     {
         Parametros prm = new Parametros();
+        Calculos cal = new Calculos();
 
         public Main()
         {
@@ -76,6 +77,20 @@ namespace REMA
             numericUpDownS3.Value = prm.S3;
         }
 
+        private void PreencherParametros(Parametros prm)
+        {
+            prm.F = numericUpDownF.Value;
+            prm.P = numericUpDownP.Value;
+            prm.u = numericUpDownU.Value;
+            prm.v = numericUpDownV.Value;
+            prm.w = numericUpDownW.Value;
+            prm.x = numericUpDownX.Value;
+            prm.y = numericUpDownY.Value;
+            prm.S1 = numericUpDownS1.Value;
+            prm.S2 = numericUpDownS2.Value;
+            prm.S3 = numericUpDownS3.Value;
+        }
+
         private void ConfigurarCampos()
         {
             var campos = Campos();
@@ -83,7 +98,7 @@ namespace REMA
             foreach(var campo in campos)
             {
                 campo.Value = decimal.Zero;
-                campo.Maximum = 10000000.0M;
+                campo.Maximum = decimal.MaxValue;
                 campo.Minimum = decimal.Zero;
                 campo.DecimalPlaces = 2;
                 campo.KeyPress += campo_KeyPress;
@@ -107,7 +122,11 @@ namespace REMA
         {
             if(validar())
             {
-                MessageBox.Show("Thanks!");
+                PreencherParametros(prm);
+                cal.Calcular(prm);
+
+                Form respostas = new respostas(cal);
+                respostas.Show();
             }
             else
             {
