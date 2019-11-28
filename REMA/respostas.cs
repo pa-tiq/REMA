@@ -12,6 +12,8 @@ namespace REMA
 {
     public partial class respostas : Form
     {
+        Graficos gr = new Graficos(pictre);
+
         public respostas(Calculos cal)
         {
             InitializeComponent();

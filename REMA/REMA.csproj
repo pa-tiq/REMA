@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculos.cs" />
+    <Compile Include="Graficos.cs" />
     <Compile Include="Parametros.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
