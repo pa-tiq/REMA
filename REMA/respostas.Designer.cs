@@ -42,6 +42,12 @@
             this.labelP = new System.Windows.Forms.Label();
             this.labelF = new System.Windows.Forms.Label();
             this.tabPageCortes = new System.Windows.Forms.TabPage();
+            this.pictureBoxM3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxM2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxM1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxV3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxV2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxV1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownM3 = new System.Windows.Forms.NumericUpDown();
@@ -56,7 +62,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
-            this.pictureBoxGraph = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPageViga.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,6 +71,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAy)).BeginInit();
             this.tabPageCortes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxM3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxM2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxM1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxV3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxV2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxV1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownM3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV3)).BeginInit();
@@ -73,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownM2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownM1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraph)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -87,7 +97,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(592, 298);
+            this.tabControl1.Size = new System.Drawing.Size(679, 298);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPageViga
@@ -96,7 +106,7 @@
             this.tabPageViga.Location = new System.Drawing.Point(4, 22);
             this.tabPageViga.Name = "tabPageViga";
             this.tabPageViga.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageViga.Size = new System.Drawing.Size(584, 272);
+            this.tabPageViga.Size = new System.Drawing.Size(671, 272);
             this.tabPageViga.TabIndex = 0;
             this.tabPageViga.Text = "Viga";
             this.tabPageViga.UseVisualStyleBackColor = true;
@@ -201,15 +211,68 @@
             // 
             // tabPageCortes
             // 
-            this.tabPageCortes.Controls.Add(this.pictureBoxGraph);
+            this.tabPageCortes.Controls.Add(this.pictureBoxM3);
+            this.tabPageCortes.Controls.Add(this.pictureBoxM2);
+            this.tabPageCortes.Controls.Add(this.pictureBoxM1);
+            this.tabPageCortes.Controls.Add(this.pictureBoxV3);
+            this.tabPageCortes.Controls.Add(this.pictureBoxV2);
+            this.tabPageCortes.Controls.Add(this.pictureBoxV1);
             this.tabPageCortes.Controls.Add(this.groupBox1);
             this.tabPageCortes.Location = new System.Drawing.Point(4, 22);
             this.tabPageCortes.Name = "tabPageCortes";
             this.tabPageCortes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCortes.Size = new System.Drawing.Size(584, 272);
+            this.tabPageCortes.Size = new System.Drawing.Size(671, 272);
             this.tabPageCortes.TabIndex = 2;
             this.tabPageCortes.Text = "Cortes";
             this.tabPageCortes.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxM3
+            // 
+            this.pictureBoxM3.Location = new System.Drawing.Point(501, 137);
+            this.pictureBoxM3.Name = "pictureBoxM3";
+            this.pictureBoxM3.Size = new System.Drawing.Size(155, 125);
+            this.pictureBoxM3.TabIndex = 54;
+            this.pictureBoxM3.TabStop = false;
+            // 
+            // pictureBoxM2
+            // 
+            this.pictureBoxM2.Location = new System.Drawing.Point(340, 137);
+            this.pictureBoxM2.Name = "pictureBoxM2";
+            this.pictureBoxM2.Size = new System.Drawing.Size(155, 125);
+            this.pictureBoxM2.TabIndex = 53;
+            this.pictureBoxM2.TabStop = false;
+            // 
+            // pictureBoxM1
+            // 
+            this.pictureBoxM1.Location = new System.Drawing.Point(179, 137);
+            this.pictureBoxM1.Name = "pictureBoxM1";
+            this.pictureBoxM1.Size = new System.Drawing.Size(155, 125);
+            this.pictureBoxM1.TabIndex = 52;
+            this.pictureBoxM1.TabStop = false;
+            // 
+            // pictureBoxV3
+            // 
+            this.pictureBoxV3.Location = new System.Drawing.Point(501, 6);
+            this.pictureBoxV3.Name = "pictureBoxV3";
+            this.pictureBoxV3.Size = new System.Drawing.Size(155, 125);
+            this.pictureBoxV3.TabIndex = 51;
+            this.pictureBoxV3.TabStop = false;
+            // 
+            // pictureBoxV2
+            // 
+            this.pictureBoxV2.Location = new System.Drawing.Point(340, 6);
+            this.pictureBoxV2.Name = "pictureBoxV2";
+            this.pictureBoxV2.Size = new System.Drawing.Size(155, 125);
+            this.pictureBoxV2.TabIndex = 51;
+            this.pictureBoxV2.TabStop = false;
+            // 
+            // pictureBoxV1
+            // 
+            this.pictureBoxV1.Location = new System.Drawing.Point(179, 6);
+            this.pictureBoxV1.Name = "pictureBoxV1";
+            this.pictureBoxV1.Size = new System.Drawing.Size(155, 125);
+            this.pictureBoxV1.TabIndex = 50;
+            this.pictureBoxV1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -234,7 +297,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 154);
+            this.label3.Location = new System.Drawing.Point(6, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 45;
@@ -285,7 +348,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 128);
+            this.label4.Location = new System.Drawing.Point(6, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 36;
@@ -294,7 +357,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 100);
+            this.label5.Location = new System.Drawing.Point(6, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 13);
             this.label5.TabIndex = 35;
@@ -303,7 +366,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 73);
+            this.label6.Location = new System.Drawing.Point(6, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 34;
@@ -312,7 +375,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 48);
+            this.label12.Location = new System.Drawing.Point(6, 47);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(25, 13);
             this.label12.TabIndex = 33;
@@ -321,7 +384,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 22);
+            this.label13.Location = new System.Drawing.Point(6, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(23, 13);
             this.label13.TabIndex = 32;
@@ -338,19 +401,11 @@
             this.buttonOk.Text = "Ok";
             this.buttonOk.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxGraph
-            // 
-            this.pictureBoxGraph.Location = new System.Drawing.Point(296, 62);
-            this.pictureBoxGraph.Name = "pictureBoxGraph";
-            this.pictureBoxGraph.Size = new System.Drawing.Size(154, 132);
-            this.pictureBoxGraph.TabIndex = 50;
-            this.pictureBoxGraph.TabStop = false;
-            // 
             // respostas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 341);
+            this.ClientSize = new System.Drawing.Size(698, 341);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
@@ -366,6 +421,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAy)).EndInit();
             this.tabPageCortes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxM3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxM2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxM1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxV3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxV2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxV1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownM3)).EndInit();
@@ -374,7 +435,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownM2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownM1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraph)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,6 +469,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBoxGraph;
+        private System.Windows.Forms.PictureBox pictureBoxV1;
+        private System.Windows.Forms.PictureBox pictureBoxM3;
+        private System.Windows.Forms.PictureBox pictureBoxM2;
+        private System.Windows.Forms.PictureBox pictureBoxM1;
+        private System.Windows.Forms.PictureBox pictureBoxV3;
+        private System.Windows.Forms.PictureBox pictureBoxV2;
     }
 }

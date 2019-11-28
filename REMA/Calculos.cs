@@ -9,6 +9,8 @@ namespace REMA
     public class Calculos
     {
 
+        private Parametros prm;
+
         public Calculos()
         {
             this.LF = decimal.Zero;
@@ -25,20 +27,21 @@ namespace REMA
             this.M3 = decimal.Zero;
         }
 
-        public void Calcular(Parametros prm)
+        public void Calcular(Parametros p)
         {
+            prm = p;
             this.LF = prm.u + prm.v;
             this.LP = prm.u;
             this.LT = prm.u + prm.v + prm.w;
             //P é a força distribuída e F é a força concentrada
-            this.Ay = (prm.F * (1 - (LF / LT)) + Gama(prm) * (1 + Beta()));
-            this.Dy = Gama(prm) + prm.F - Ay;
-            this.V1 = retornarV1(prm);
-            this.M1 = retornarM1(prm);
-            this.V2 = retornarV2(prm);
-            this.M2 = retornarM2(prm);
-            this.V3 = retornarV3(prm);
-            this.M3 = retornarM3(prm);
+            this.Ay = (prm.F * (1 - (LF / LT)) + Gama() * (1 + Beta()));
+            this.Dy = Gama() + prm.F - Ay;
+            this.V1 = retornarV1();
+            this.M1 = retornarM1();
+            this.V2 = retornarV2();
+            this.M2 = retornarM2();
+            this.V3 = retornarV3();
+            this.M3 = retornarM3();
         }
 
         private decimal Beta()
@@ -46,39 +49,70 @@ namespace REMA
             return ((2 * LP) / (3 * LT));
         }
 
-        private decimal Gama(Parametros prm)
+        private decimal Gama()
         {
             return (prm.P * LP) / 2;
         }
 
-        private decimal retornarV1(Parametros prm)
+        public float plotV1(float s1)
+        {
+            return (float)Ay - (((float)prm.P / (2 * (float)LP)) * s1 * s1);
+        }
+
+        private decimal retornarV1()
         {
             return Ay - ((prm.P / (2 * LP)) * prm.S1 * prm.S1);
         }
 
-        private decimal retornarM1(Parametros prm)
+        public float plotM1(float s1)
+        {
+            return (float)Ay* s1 - (((float)prm.P * s1 * s1 * s1 / (6 * (float)LP)));
+        }
+
+        private decimal retornarM1()
         {
             return Ay * prm.S1 - ((prm.P * prm.S1 * prm.S1 * prm.S1 / (6 * LP)));
         }
 
-        private decimal retornarV2(Parametros prm)
+        public float plotV2(float s2)
         {
-            return Ay - Gama(prm);
+            return (float)(Ay - Gama());
         }
 
-        private decimal retornarM2(Parametros prm)
+        private decimal retornarV2()
         {
-            return Ay * prm.S2 - Gama(prm)*prm.S2 + Gama(prm)*Beta()*LT;
+            return Ay - Gama();
         }
 
-        private decimal retornarV3(Parametros prm)
+        public float plotM2(float s2)
         {
-            return Ay - Gama(prm) - prm.F;
+            return (float)Ay * s2 - (float)Gama() * s2 + (float)Gama() * (float)Beta() * (float)LT;
         }
 
-        private decimal retornarM3(Parametros prm)
+        private decimal retornarM2()
         {
-            return (Ay - Gama(prm) - prm.F) * prm.S3 + (Gama(prm) * Beta() * LT) + (prm.F * LP);
+            return Ay * prm.S2 - Gama()*prm.S2 + Gama()*Beta()*LT;
+        }
+
+        public float plotV3(float s3)
+        {
+            return (float)(Ay - Gama() - prm.F);
+        }
+
+        private decimal retornarV3()
+        {
+            return Ay - Gama() - prm.F;
+        }
+
+        public float plotM3(float s3)
+        {
+            return (float)(Ay - Gama() - prm.F) * s3 +
+                (float)(Gama() * Beta() * LT) + (float)(prm.F * LP);
+        }
+
+        private decimal retornarM3()
+        {
+            return (Ay - Gama() - prm.F) * prm.S3 + (Gama() * Beta() * LT) + (prm.F * LP);
         }
 
         public decimal LT { get; set; }

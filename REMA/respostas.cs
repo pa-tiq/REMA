@@ -12,13 +12,12 @@ namespace REMA
 {
     public partial class respostas : Form
     {
-        Graficos gr = new Graficos(pictre);
 
-        public respostas(Calculos cal)
+        public respostas(Calculos cal,Parametros par)
         {
             InitializeComponent();
             ConfigurarCampos();
-            PreencherTela(cal);
+            PreencherTela(cal,par);
         }
 
         private void AtualizarCampos()
@@ -30,7 +29,7 @@ namespace REMA
         private List<NumericUpDown> Campos()
         {
             var campos = new List<NumericUpDown>();
-
+         
             campos.Add(numericUpDownAy);
             campos.Add(numericUpDownDy);
             campos.Add(numericUpDownLP);
@@ -41,7 +40,7 @@ namespace REMA
             campos.Add(numericUpDownV3);
             campos.Add(numericUpDownM1);
             campos.Add(numericUpDownM2);
-            campos.Add(numericUpDownM3);
+            campos.Add(numericUpDownM3);         
 
             return campos;
         }
@@ -49,7 +48,7 @@ namespace REMA
         private void ConfigurarCampos()
         {
             var campos = Campos();
-
+            
             foreach (var campo in campos)
             {
                 campo.Value = decimal.Zero;
@@ -60,7 +59,7 @@ namespace REMA
             }
         }
 
-        private void PreencherTela(Calculos cal)
+        private void PreencherTela(Calculos cal,Parametros par)
         {
             numericUpDownAy.Value = cal.Ay;
             numericUpDownDy.Value = cal.Dy;
@@ -75,6 +74,22 @@ namespace REMA
             numericUpDownM3.Value = cal.M3;
 
             AtualizarCampos();
+           
+            Graficos gr = new Graficos(cal,par);
+            gr.PlotV1(pictureBoxV1);
+            gr.PlotV2(pictureBoxV2);
+            gr.PlotV3(pictureBoxV3);
+            gr.PlotM1(pictureBoxM1);
+            gr.PlotM2(pictureBoxM2);
+            gr.PlotM3(pictureBoxM3);
+
+            pictureBoxV1.Update();
+            pictureBoxV2.Update();
+            pictureBoxV3.Update();
+            pictureBoxM1.Update();
+            pictureBoxM2.Update();
+            pictureBoxM3.Update();
+
         }
     }
 }

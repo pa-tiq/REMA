@@ -125,7 +125,7 @@ namespace REMA
                 PreencherParametros(prm);
                 cal.Calcular(prm);
 
-                Form respostas = new respostas(cal);
+                Form respostas = new respostas(cal,prm);
                 respostas.Show();
             }
             else
