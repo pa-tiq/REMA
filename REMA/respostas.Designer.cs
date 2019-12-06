@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(respostas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageViga = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -75,6 +76,7 @@
             this.numericUpDownV3X = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownV1X = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownV2X = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPageViga.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -100,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV3X)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV1X)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV2X)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -118,11 +121,12 @@
             // 
             // tabPageViga
             // 
+            this.tabPageViga.Controls.Add(this.pictureBox1);
             this.tabPageViga.Controls.Add(this.groupBox2);
             this.tabPageViga.Location = new System.Drawing.Point(4, 22);
             this.tabPageViga.Name = "tabPageViga";
             this.tabPageViga.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageViga.Size = new System.Drawing.Size(706, 376);
+            this.tabPageViga.Size = new System.Drawing.Size(763, 376);
             this.tabPageViga.TabIndex = 0;
             this.tabPageViga.Text = "Viga";
             this.tabPageViga.UseVisualStyleBackColor = true;
@@ -526,6 +530,19 @@
             this.numericUpDownV2X.Size = new System.Drawing.Size(69, 20);
             this.numericUpDownV2X.TabIndex = 75;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(179, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(578, 252);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
             // respostas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,6 +582,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV3X)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV1X)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownV2X)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -618,5 +636,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownV3X;
         private System.Windows.Forms.NumericUpDown numericUpDownV2X;
         private System.Windows.Forms.NumericUpDown numericUpDownV1X;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace REMA
@@ -193,10 +190,11 @@ namespace REMA
                             }
                             if (valid_point)
                             {
-                                if (Math.Abs(x - point1) < 0.0001 ||
-                                    Math.Abs(x - point2) < 0.0001 ||
-                                    Math.Abs(x - point3) < 0.0001) Xpoints.Add(new PointF(x, y));
-                                else points.Add(new PointF(x, y));
+                                if (Math.Abs(x - point1) <= (float)0.001 ||
+                                    Math.Abs(x - point2) <= (float)0.001 ||
+                                    Math.Abs(x - point3) <= (float)0.001) Xpoints.Add(new PointF(x, y));
+
+                                points.Add(new PointF(x, y));
 
                             }
                         }
@@ -211,7 +209,7 @@ namespace REMA
                             if (points.Count > 1)
                             {
                                 gr.DrawLines(graph_pen, points.ToArray());
-                                drawPoint(gr, picGraph, Xpoints[0].X, Xpoints[0].Y,xmin, xmax, ymin, ymax);
+                                if (Xpoints.Count >= 1) drawPoint(gr, picGraph, Xpoints[0].X, Xpoints[0].Y,xmin, xmax, ymin, ymax);
                             }
                                 
                             points.Clear();
@@ -223,7 +221,7 @@ namespace REMA
                     if (points.Count > 1)
                     {
                         gr.DrawLines(graph_pen, points.ToArray());
-                        drawPoint(gr, picGraph, Xpoints[0].X, Xpoints[0].Y,xmin,xmax,ymin,ymax);
+                        if(Xpoints.Count >=1) drawPoint(gr, picGraph, Xpoints[0].X, Xpoints[0].Y,xmin,xmax,ymin,ymax);
                     }
                         
                 }

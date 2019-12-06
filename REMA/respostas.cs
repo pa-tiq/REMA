@@ -115,9 +115,9 @@ namespace REMA
         {
             numericUpDownAy.Value = cal.Ay;
             numericUpDownDy.Value = cal.Dy;
-            numericUpDownLP.Value = cal.LP;
-            numericUpDownLF.Value = cal.LF;
-            numericUpDownLT.Value = cal.LT;
+            numericUpDownLP.Value = cal.LP * new decimal(1e3);
+            numericUpDownLF.Value = cal.LF * new decimal(1e3);
+            numericUpDownLT.Value = cal.LT * new decimal(1e3);
 
             numericUpDownV1.Value = cal.V1;         
             numericUpDownV2.Value = cal.V2;
@@ -203,7 +203,7 @@ namespace REMA
             {
                 par.S1 = numericUpDownV1X.Value * new decimal(1e-3);
                 par.S2 = numericUpDownV2X.Value * new decimal(1e-3);
-                par.S2 = numericUpDownV2X.Value * new decimal(1e-3);
+                par.S2 = numericUpDownV3X.Value * new decimal(1e-3);
 
                 cal.Calcular(par);
 
