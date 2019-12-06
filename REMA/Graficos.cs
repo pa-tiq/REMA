@@ -15,6 +15,7 @@ namespace REMA
         private Parametros par;
         private float Vymin, Vymax;
         private float Mymin, Mymax;
+        private float point1, point2, point3;
 
         public Graficos(Calculos c, Parametros p)
         {
@@ -24,10 +25,14 @@ namespace REMA
             var tv = encontrarMinMaxV(c);
             var tm = encontrarMinMaxM(c);
 
-            Vymin = tv.Item1 * (float)1.7;
-            Vymax = tv.Item2 * (float)1.7;
+            Vymin = tv.Item1 * (float)1.2;
+            Vymax = tv.Item2 * (float)1.2;
             Mymin = tm.Item1 * (float)1.7;
             Mymax = tm.Item2 * (float)1.7;
+
+            point1 = (float)p.S1;
+            point2 = (float)p.S2;
+            point3 = (float)p.S3;
         }
 
         private Tuple<float,float> encontrarMinMaxM(Calculos c)
@@ -117,7 +122,6 @@ namespace REMA
 
         private void MakeGraph(PictureBox picGraph, Func<float, float> F, float xmin, float xmax, float ymin, float ymax)
         {
-
             // Make the Bitmap.
             int wid = picGraph.ClientSize.Width;
             int hgt = picGraph.ClientSize.Height;
@@ -158,17 +162,20 @@ namespace REMA
                     inverse.Invert();
                     PointF[] pixel_pts =
                     {
-                new PointF(0, 0),
-                new PointF(1, 0)
-            };
+                        new PointF(0, 0),
+                        new PointF(1, 0)
+                    };
                     inverse.TransformPoints(pixel_pts);
                     float dx = pixel_pts[1].X - pixel_pts[0].X;
                     dx /= 2;
 
                     // Loop over x values to generate points.
                     List<PointF> points = new List<PointF>();
+                    List<PointF> Xpoints = new List<PointF>();
                     for (float x = xmin; x <= xmax; x += dx)
                     {
+
+
                         bool valid_point = false;
                         try
                         {
@@ -184,7 +191,14 @@ namespace REMA
                                 if (Math.Abs(dy / dx) < 1000)
                                     valid_point = true;
                             }
-                            if (valid_point) points.Add(new PointF(x, y));
+                            if (valid_point)
+                            {
+                                if (Math.Abs(x - point1) < 0.0001 ||
+                                    Math.Abs(x - point2) < 0.0001 ||
+                                    Math.Abs(x - point3) < 0.0001) Xpoints.Add(new PointF(x, y));
+                                else points.Add(new PointF(x, y));
+
+                            }
                         }
                         catch
                         {
@@ -195,7 +209,11 @@ namespace REMA
                         if (!valid_point)
                         {
                             if (points.Count > 1)
+                            {
                                 gr.DrawLines(graph_pen, points.ToArray());
+                                drawPoint(gr, picGraph, Xpoints[0].X, Xpoints[0].Y,xmin, xmax, ymin, ymax);
+                            }
+                                
                             points.Clear();
                         }
 
@@ -203,12 +221,25 @@ namespace REMA
 
                     // Draw the last batch of points.
                     if (points.Count > 1)
+                    {
                         gr.DrawLines(graph_pen, points.ToArray());
+                        drawPoint(gr, picGraph, Xpoints[0].X, Xpoints[0].Y,xmin,xmax,ymin,ymax);
+                    }
+                        
                 }
             }
 
             // Display the result.
             picGraph.Image = bm;
+        }
+
+        public void drawPoint(Graphics g, PictureBox picgraph,float x, float y, float xmin, float xmax, float ymin, float ymax)
+        {
+            SolidBrush brush = new SolidBrush(Color.Brown);
+            PointF dPoint = new PointF(x, y);
+            RectangleF rect = new RectangleF(dPoint, new SizeF((xmax-xmin)/20, (ymax-ymin)/30));
+            g.FillRectangle(brush, rect);
+            g.Dispose();
         }
     }
 }

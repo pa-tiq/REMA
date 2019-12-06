@@ -139,6 +139,13 @@ namespace REMA
             var campos = Campos();
             var valor = decimal.Zero;
 
+            if (numericUpDownS1.Value < 0 || numericUpDownS1.Value > numericUpDownU.Value) return false;
+            if (numericUpDownS2.Value < numericUpDownU.Value ||
+                numericUpDownS2.Value > numericUpDownU.Value + numericUpDownV.Value) return false;
+            if (numericUpDownS3.Value < numericUpDownU.Value + numericUpDownV.Value || 
+                numericUpDownS3.Value > numericUpDownU.Value + numericUpDownV.Value + 
+                numericUpDownW.Value) return false;
+
             foreach (var x in campos)
             {
                 decimal.TryParse(x.Value.ToString(), out valor);

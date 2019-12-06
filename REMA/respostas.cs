@@ -12,17 +12,24 @@ namespace REMA
 {
     public partial class respostas : Form
     {
+        private Calculos cal;
+        private Parametros par;
 
-        public respostas(Calculos cal,Parametros par)
+        public respostas(Calculos c,Parametros p)
         {
+            cal = c;
+            par = p;
+
             InitializeComponent();
             ConfigurarCampos();
-            PreencherTela(cal,par);
+            PreencherTela();
         }
+
 
         private void AtualizarCampos()
         {       
             Campos().ForEach(x => x.Update());
+            CamposEditaveis().ForEach(x => x.Update());
         }
 
         private List<NumericUpDown> Campos()
@@ -39,10 +46,22 @@ namespace REMA
             campos.Add(numericUpDownV3);
             campos.Add(numericUpDownM1);
             campos.Add(numericUpDownM2);
-            campos.Add(numericUpDownM3);         
+            campos.Add(numericUpDownM3);
 
             return campos;
         }
+
+        private List<NumericUpDown> CamposEditaveis()
+        {
+            var campos = new List<NumericUpDown>();
+
+            campos.Add(numericUpDownV1X);
+            campos.Add(numericUpDownV2X);
+            campos.Add(numericUpDownV3X);
+
+            return campos;
+        }
+
 
 
         private List<TextBox> CamposTexto()
@@ -55,6 +74,9 @@ namespace REMA
             campos.Add(textBoxM1);
             campos.Add(textBoxM2);
             campos.Add(textBoxM3);
+            campos.Add(textBoxVM1);
+            campos.Add(textBoxVM2);
+            campos.Add(textBoxVM3);
 
             return campos;
         }
@@ -63,6 +85,7 @@ namespace REMA
         {
             var campos = Campos();
             var campost = CamposTexto();
+            var camposed = CamposEditaveis();
             
             foreach (var campo in campos)
             {
@@ -78,9 +101,17 @@ namespace REMA
             {
                 campo.ReadOnly = true;
             }
+
+            foreach (var campo in camposed)
+            {
+                campo.Value = decimal.Zero;
+                campo.Maximum = decimal.MaxValue;
+                campo.Minimum = decimal.MinValue;
+                campo.DecimalPlaces = 2;
+            }
         }
 
-        private void PreencherTela(Calculos cal,Parametros par)
+        private void PreencherTela()
         {
             numericUpDownAy.Value = cal.Ay;
             numericUpDownDy.Value = cal.Dy;
@@ -102,21 +133,27 @@ namespace REMA
             textBoxM2.Text = cal.plotM2();
             textBoxM3.Text = cal.plotM3();
 
+            numericUpDownV1X.Value = par.S1* new decimal(1e3);
+            numericUpDownV2X.Value = par.S2* new decimal(1e3);
+            numericUpDownV3X.Value = par.S3* new decimal(1e3);
+
+            textBoxVM1.Text = "0 a " + decimal.Round
+                (cal.LP * new decimal(1e3), 2);
+            textBoxVM2.Text = decimal.Round(cal.LP * new decimal(1e3), 2) + " a " 
+                + decimal.Round(cal.LF * new decimal(1e3), 2);
+            textBoxVM3.Text = decimal.Round(cal.LF * new decimal(1e3), 2) + " a " 
+                + decimal.Round(cal.LT * new decimal(1e3), 2);
+
             AtualizarCampos();
            
-            Graficos grV1 = new Graficos(cal,par);
-            Graficos grV2 = new Graficos(cal,par);
-            Graficos grV3 = new Graficos(cal,par);
-            Graficos grM1 = new Graficos(cal,par);
-            Graficos grM2 = new Graficos(cal,par);
-            Graficos grM3 = new Graficos(cal,par);
+            Graficos gr = new Graficos(cal,par);
 
-            grV1.PlotV1(pictureBoxV1);
-            grV2.PlotV2(pictureBoxV2);
-            grV3.PlotV3(pictureBoxV3);
-            grM1.PlotM1(pictureBoxM1);
-            grM2.PlotM2(pictureBoxM2);
-            grM3.PlotM3(pictureBoxM3);
+            gr.PlotV1(pictureBoxV1);
+            gr.PlotV2(pictureBoxV2);
+            gr.PlotV3(pictureBoxV3);
+            gr.PlotM1(pictureBoxM1);
+            gr.PlotM2(pictureBoxM2);
+            gr.PlotM3(pictureBoxM3);
 
             pictureBoxV1.Update();
             pictureBoxV2.Update();
@@ -125,6 +162,54 @@ namespace REMA
             pictureBoxM2.Update();
             pictureBoxM3.Update();
 
+        }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private bool validar()
+        {
+            var valor = decimal.Zero;
+            foreach (var x in CamposEditaveis())
+            {
+                decimal.TryParse(x.Value.ToString(), out valor);
+                if (valor <= decimal.Zero)
+                {
+                    if (!x.Focus())
+                    {
+                        for (var i = 0; i < tabControl1.TabPages.Count; i++)
+                        {
+                            tabControl1.SelectTab(i);
+                            if (x.Focus()) break;
+                        }
+                    }
+
+                    return false;
+                }
+            }
+
+            if (numericUpDownV1X.Value * new decimal(1e-3) < 0 || numericUpDownV1X.Value * new decimal(1e-3) > cal.LP) return false;
+            if (numericUpDownV2X.Value * new decimal(1e-3) < cal.LP || numericUpDownV2X.Value * new decimal(1e-3) > cal.LF) return false;
+            if (numericUpDownV3X.Value * new decimal(1e-3) < cal.LF || numericUpDownV3X.Value * new decimal(1e-3) > cal.LT) return false;
+            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (validar())
+            {
+                par.S1 = numericUpDownV1X.Value * new decimal(1e-3);
+                par.S2 = numericUpDownV2X.Value * new decimal(1e-3);
+                par.S2 = numericUpDownV2X.Value * new decimal(1e-3);
+
+                cal.Calcular(par);
+
+                PreencherTela();
+            }
+            
         }
     }
 }
