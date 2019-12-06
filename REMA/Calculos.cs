@@ -10,6 +10,7 @@ namespace REMA
     {
 
         private Parametros prm;
+        private int d = 2; //casas decimais
 
         public Calculos()
         {
@@ -59,14 +60,24 @@ namespace REMA
             return (float)Ay - (((float)prm.P / (2 * (float)LP)) * s1 * s1);
         }
 
+        public string plotV1()
+        {
+            return decimal.Round(Ay,d) + " - " + decimal.Round((prm.P / (2 * LP)), d) + " + x^2";
+        }
+
         private decimal retornarV1()
         {
             return Ay - ((prm.P / (2 * LP)) * prm.S1 * prm.S1);
         }
 
+        public string plotM1()
+        {
+            return decimal.Round(Ay, d) + " * x - " + decimal.Round(((prm.P / (6 * LP))), d) + " * x^3";
+        }
+
         public float plotM1(float s1)
         {
-            return (float)Ay* s1 - (((float)prm.P * s1 * s1 * s1 / (6 * (float)LP)));
+            return (float)Ay * s1 - (((float)prm.P * s1 * s1 * s1 / (6 * (float)LP)));
         }
 
         private decimal retornarM1()
@@ -79,6 +90,11 @@ namespace REMA
             return (float)(Ay - Gama());
         }
 
+        public string plotV2()
+        {
+            return decimal.Round((Ay - Gama()), d).ToString();
+        }
+
         private decimal retornarV2()
         {
             return Ay - Gama();
@@ -87,6 +103,12 @@ namespace REMA
         public float plotM2(float s2)
         {
             return (float)Ay * s2 - (float)Gama() * s2 + (float)Gama() * (float)Beta() * (float)LT;
+        }
+
+        public string plotM2()
+        {
+            return decimal.Round(Ay, d) + " * x - " + decimal.Round(Gama(), d) +  
+                " * x + " + decimal.Round(Gama() * Beta() * LT, d);
         }
 
         private decimal retornarM2()
@@ -99,6 +121,11 @@ namespace REMA
             return (float)(Ay - Gama() - prm.F);
         }
 
+        public string plotV3()
+        {
+            return decimal.Round((Ay - Gama() - prm.F), d).ToString();
+        }
+
         private decimal retornarV3()
         {
             return Ay - Gama() - prm.F;
@@ -108,6 +135,12 @@ namespace REMA
         {
             return (float)(Ay - Gama() - prm.F) * s3 +
                 (float)(Gama() * Beta() * LT) + (float)(prm.F * LP);
+        }
+
+        public string plotM3()
+        {
+            return decimal.Round((Ay - Gama() - prm.F), d) + " * x + " +
+               decimal.Round(((Gama() * Beta() * LT) + (prm.F * LP)), d);
         }
 
         private decimal retornarM3()
