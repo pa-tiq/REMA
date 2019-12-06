@@ -108,6 +108,15 @@ namespace REMA
                 campo.Maximum = decimal.MaxValue;
                 campo.Minimum = decimal.MinValue;
                 campo.DecimalPlaces = 2;
+                campo.KeyDown += Campo_KeyDown;
+            }
+        }
+
+        private void Campo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                aplicar();
             }
         }
 
@@ -138,11 +147,11 @@ namespace REMA
             numericUpDownV3X.Value = par.S3* new decimal(1e3);
 
             textBoxVM1.Text = "0 a " + decimal.Round
-                (cal.LP * new decimal(1e3), 2);
+                (cal.LP * new decimal(1e3), 2) + " mm";
             textBoxVM2.Text = decimal.Round(cal.LP * new decimal(1e3), 2) + " a " 
-                + decimal.Round(cal.LF * new decimal(1e3), 2);
+                + decimal.Round(cal.LF * new decimal(1e3), 2) + " mm";
             textBoxVM3.Text = decimal.Round(cal.LF * new decimal(1e3), 2) + " a " 
-                + decimal.Round(cal.LT * new decimal(1e3), 2);
+                + decimal.Round(cal.LT * new decimal(1e3), 2) + " mm";
 
             AtualizarCampos();
            
@@ -196,20 +205,23 @@ namespace REMA
             return true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void aplicar()
         {
-
             if (validar())
             {
                 par.S1 = numericUpDownV1X.Value * new decimal(1e-3);
                 par.S2 = numericUpDownV2X.Value * new decimal(1e-3);
-                par.S2 = numericUpDownV3X.Value * new decimal(1e-3);
+                par.S3 = numericUpDownV3X.Value * new decimal(1e-3);
 
                 cal.Calcular(par);
 
                 PreencherTela();
             }
-            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            aplicar();   
         }
     }
 }

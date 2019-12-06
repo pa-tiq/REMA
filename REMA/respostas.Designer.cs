@@ -77,6 +77,7 @@
             this.numericUpDownV1X = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownV2X = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageViga.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -231,6 +232,7 @@
             // 
             // tabPageCortes
             // 
+            this.tabPageCortes.Controls.Add(this.label1);
             this.tabPageCortes.Controls.Add(this.numericUpDownV2X);
             this.tabPageCortes.Controls.Add(this.textBoxVM3);
             this.tabPageCortes.Controls.Add(this.numericUpDownV3X);
@@ -543,6 +545,17 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(216, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(547, 13);
+            this.label1.TabIndex = 76;
+            this.label1.Text = "---------------------------------------------------------------------------------" +
+    "--------------------------------------------------------------------------------" +
+    "-------------------";
+            // 
             // respostas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,5 +650,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownV2X;
         private System.Windows.Forms.NumericUpDown numericUpDownV1X;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
